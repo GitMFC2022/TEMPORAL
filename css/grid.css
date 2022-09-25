@@ -22,11 +22,13 @@ html {
 h1 {
     text-align: center;
     font-size: 1.5em;
+    color: whitesmoke;
 }
 
 h2 {
     text-align: center;
     font-size: 1em;
+    color:antiquewhite;
 }
 
 body {
@@ -47,9 +49,9 @@ body {
     grid-area: header;
     font-family: sans-serif;
     background-color: burlywood; 
-    color: antiquewhite;
     border-radius: 5px; /**redondeo los bordes del sombreado**/
     text-align: center;
+    font-weight: bold;
 }
 
 .navbar {
@@ -185,15 +187,50 @@ justify-content: left;
         
     }
 
+    .nav {
+        background-color:wheat;
+    }
+    
     .nav-menu {
         display: inline-block;
-    }
+   }
 
     .main {
         background-image: url("/assets/Galeria_con_hamaca_transp_75.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
     }
+
+   
+    .contenedor-definiciones {
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+        padding: 20px 20px;
+        gap: 20px;
+
+    }
+
+    .caja {
+        /* background-color: antiquewhite; */
+        background-color: rgb(226, 209, 185);
+        border-radius: 1.5rem;
+        padding: 1rem;
+    
+    }
+
+    .titulo { 
+        color:black;
+        /* font-weight: bold; */
+    }
+
+    .texto {
+        color: rgb(164, 75, 75);
+    }    
 }
