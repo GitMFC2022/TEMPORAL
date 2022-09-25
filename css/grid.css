@@ -45,12 +45,19 @@ body {
 
 .header {
     grid-area: header;
-    background-color: aliceblue;
+    font-family: sans-serif;
+    background-color: burlywood; 
+    color: antiquewhite;
+    border-radius: 5px; /**redondeo los bordes del sombreado**/
+    text-align: center;
 }
 
 .navbar {
     grid-area: navbar;
-    background-color: antiquewhite;
+}
+
+.nav-menu-link:hover {
+    background-color: rosybrown; 
 }
 
 .main {
@@ -71,6 +78,7 @@ body {
 /* LAYOUT CELULAR */
 /**************************/
 
+
 .grid-container {
     display: grid;
     gap: 10px;
@@ -82,6 +90,31 @@ body {
         "sidebar"   100px
         "footer"    100px;
 }
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: .5em;
+    margin: auto;    
+}
+ 
+
+.logotype {
+display: flex;
+justify-content: left;
+}
+
+.nav-menu-link {
+    background-color: lightcoral; 
+    color: antiquewhite;
+    text-decoration: none; /**con esto elimino el subrayado de los link q coloca x default**/
+    padding: .5em; /**le amplio la zona sombreada sobre el boton del link**/
+    border-radius: .5em; /**redondeo los bordes del sombreado**/
+    margin:0.3%; 
+ }
+
+
 
 /* LAYOUT TABLET */
 /**************************/
@@ -109,6 +142,21 @@ body {
         "footer  footer"    100px /
         200px auto;
     }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        padding: .5em;
+        margin: -.5em;
+      
+    }
+    
+    .nav-menu-link {
+        background-color: rgb(180, 241, 83); 
+        color: rgb(118, 108, 95);
+        text-decoration: none; /**con esto elimino el subrayado de los link q coloca x default**/
+    }
 }
 
 
@@ -125,5 +173,8 @@ body {
         "navbar  main   sidebar "  auto
         "footer  footer footer"    100px /
         200px    auto   200px;
+    }
+    .nav-menu {
+        display: inline-block;
     }
 }
