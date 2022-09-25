@@ -22,13 +22,16 @@ html {
 h1 {
     text-align: center;
     font-size: 1.5em;
-    color: whitesmoke;
+    color:white;
 }
 
 h2 {
     text-align: center;
-    font-size: 1em;
+    font-family: Tahoma;
+    font-size: 1.25em;
+    /* color: aliceblue; */
     color:antiquewhite;
+    
 }
 
 body {
@@ -47,7 +50,6 @@ body {
 
 .header {
     grid-area: header;
-    font-family: sans-serif;
     background-color: burlywood; 
     border-radius: 5px; /**redondeo los bordes del sombreado**/
     text-align: center;
@@ -56,6 +58,7 @@ body {
 
 .navbar {
     grid-area: navbar;
+    background-color: bisque;
 }
 
 .nav-menu-link:hover {
@@ -69,12 +72,16 @@ body {
 
 .sidebar {
     grid-area: sidebar;
-    background-color: pink;
+    background-color: rgb(231, 191, 191);
+}
+
+.sidebar-lista {
+    list-style: none;
 }
 
 .footer {
     grid-area: footer;
-    background-color: beige;
+    background-color:  burlywood;
 }
 
 /* LAYOUT CELULAR */
@@ -85,11 +92,12 @@ body {
     display: grid;
     gap: 10px;     /*aqui el ancho de la columna se ajusta automat. asiq solo definimos size rows*/
     grid-template:
-        "header"    100px
+        "header"    70px
         "navbar"    50px
         "main"      auto
-        "sidebar"   100px
-        "footer"    100px;
+        "sidebar"   auto
+        "footer"    70px;
+        
 }
 
 .nav-menu {
@@ -98,6 +106,7 @@ body {
     justify-content: center;
     padding: .5em;
     margin: auto;    
+
 }
  
 
@@ -112,9 +121,8 @@ justify-content: left;
     text-decoration: none; /**con esto elimino el subrayado de los link q coloca x default**/
     padding: .5em; /**le amplio la zona sombreada sobre el boton del link**/
     border-radius: .5em; /**redondeo los bordes del sombreado**/
-    margin:0.3%; 
+    margin: auto; 
  }
-
 
 
 /* LAYOUT TABLET */
@@ -125,7 +133,7 @@ justify-content: left;
         font-size: 100%;
     }
     .grid-container {
-        background-color: rgb(153, 81, 81);
+        background-color:  beige;
         gap: 10px;
         /* grid-template-columns: 200px auto; */
         /* grid-template-rows: 100px 50px auto 100px; */
@@ -152,9 +160,9 @@ justify-content: left;
         margin: -.5em;
       
     }
-    
+
     .nav-menu-link {
-        background-color: rgb(180, 241, 83); 
+        background-color:  rgb(211, 165, 105); 
         color: rgb(118, 108, 95);
         text-decoration: none; /**con esto elimino el subrayado de los link q coloca x default**/
         
@@ -167,6 +175,37 @@ justify-content: left;
         background-position: center;
         background-color: transparent;
     }
+
+    .contenedor-definiciones {
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+        padding: 20px 20px;
+        gap: 20px;
+
+    }
+
+    .caja {
+        /* background-color: antiquewhite; */
+        background-color: rgb(226, 209, 185);
+        border-radius: 1.5rem;
+        padding: 1rem;
+    
+    }
+
+    .titulo { 
+        color:rgb(164, 75, 75);
+        /* color:black; */
+        /* font-weight: bold; */
+    }
+
+    .texto {
+        color: whitesmoke;
+    }
 }
 
 
@@ -177,7 +216,7 @@ justify-content: left;
         font-size: 100%;
     }
     .grid-container {
-        background-color:pink;
+        background-color:  beige;
         column-gap: 40px;
         grid-template:
         "header  header header"    100px
