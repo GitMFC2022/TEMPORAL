@@ -81,8 +81,7 @@ body {
 
 .grid-container {
     display: grid;
-    gap: 10px;
-     /*aqui el ancho de la columna se ajusta automat. asiq solo definimos size rows*/
+    gap: 10px;     /*aqui el ancho de la columna se ajusta automat. asiq solo definimos size rows*/
     grid-template:
         "header"    100px
         "navbar"    50px
@@ -125,7 +124,7 @@ justify-content: left;
     }
     .grid-container {
         background-color: rgb(153, 81, 81);
-    
+        gap: 10px;
         /* grid-template-columns: 200px auto; */
         /* grid-template-rows: 100px 50px auto 100px; */
         /* grid-template-areas: */
@@ -156,6 +155,15 @@ justify-content: left;
         background-color: rgb(180, 241, 83); 
         color: rgb(118, 108, 95);
         text-decoration: none; /**con esto elimino el subrayado de los link q coloca x default**/
+        
+    }
+
+    .main {
+        background-image: url("/assets/Galeria_con_hamaca_transp_75.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
     }
 }
 
@@ -168,13 +176,24 @@ justify-content: left;
     }
     .grid-container {
         background-color:pink;
+        column-gap: 40px;
         grid-template:
         "header  header header"    100px
         "navbar  main   sidebar "  auto
         "footer  footer footer"    100px /
-        200px    auto   200px;
+        120px    auto   200px;
+        
     }
+
     .nav-menu {
         display: inline-block;
+    }
+
+    .main {
+        background-image: url("/assets/Galeria_con_hamaca_transp_75.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
     }
 }
