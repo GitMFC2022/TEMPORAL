@@ -1,7 +1,25 @@
 *{  /*aplica a todo el HTML*/
+ 
+    box-sizing: border-box;
     margin:0; 
     padding:0; 
 }
+
+html {
+    /* height: 100%; */
+}
+
+.btn-px {
+    font-size: 80px;
+}
+
+.btn-rem {
+    font-size: 5rem /* 5*16px fuente base =80px*/;
+    padding: .5em;
+    margin: .25em;    
+}
+
+
 
 /** Defincion  SECCIONES Y ETIQUETAS **/
 /*-----------------------------------*/
@@ -13,11 +31,13 @@ body{
     background-position: center;
     background-color: transparent;
     font-family:Tahoma;
+    font-size: 1.20rem;
+    min-height: 100%;
     /* margin:1%;  */
-    margin: 20px auto;
-    width: 95%;
-    max-width: 1000px;
-    padding:1%;
+    /* margin: 20px auto;*/
+    width: 100%;
+    /*max-width: 1000px;*/
+    padding:1%; 
 }
 
 .project {
@@ -27,9 +47,10 @@ body{
 
 h1{
     text-align: center;
+    font-size: 1.5em;
 }
 
-
+/** INDEX.HTML*/
 header{
     background-color: burlywood; 
     color: antiquewhite;
@@ -49,6 +70,7 @@ h2{
     border-radius: 5px; 
     font-family:Tahoma;
     text-align: center;
+    font-size: 1.25em;
 }
 
 h3{
@@ -89,6 +111,9 @@ footer{
     margin:0.3%; 
 }
 
+.nav:hover {
+    background-color: rosybrown; 
+}
 
 .box-top {
     background-color: papayawhip;
@@ -186,6 +211,7 @@ footer{
     
 }
 
+
 .redsoc{
     color: lightcoral;
     font-size:1.25vw; 
@@ -209,13 +235,13 @@ footer{
 .redsoc a:hover 
 {color: whitesmoke; }
 
-
+/*
 .foto-container {
     display:grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(9, 5vw);
     grid-gap: 10px; /*espaciado entre cada una de las columnas*/
-    /* align-content: center; */
+    /* align-content: center; 
     padding: 20px;
 }
 
@@ -225,8 +251,8 @@ footer{
 
 .foto-imagen {
     width: 100%;
-    height: 100%;  /*abarcara el 100% del espacio de la grilla*/
-    object-fit: cover;  /*para que no distorcione la imagen ponemos 100%*/
+    height: 100%;  /*abarcara el 100% del espacio de la grilla
+    object-fit: cover;  /*para que no distorcione la imagen ponemos 100%
 }
 
 .foto-titulo {
@@ -343,61 +369,131 @@ footer{
     grid-row-end: 11;
 }
 
-@media (max-width: 300px) { .foto-titulo { font-size: smaller;}
+*/
 
+.foto-item > img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: burlywood;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-
-
-.contenedor {
-    display: flex;
-    background-color: rgb(229, 207, 198);
-    color: rgb(124, 117, 117);
-	font-family: 'Roboto', sans-serif;  
-    width: 80%;
-	margin: auto;
-	padding: 20px 20px;
-	gap: 20px;
-
+.foto-item:hover {
+    filter: opacity(0.5);
+    transform: scale(1.04);
+    cursor: pointer;
 }
 
-.contenedor-definiciones {
-	width: 90%;
-    display: flex;
+.foto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: minmax(300px, auto);
+    gap: 40px;
+    padding: 20px;
+    grid-auto-flow: dense;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.foto-titulo {
+    color: rgb(193, 144, 81);
+    background: linear-gradient(white, wheat);
+}
+
+/* .contenedor-caja {
+    font-size: 1.1rem;
+    background-color:whitesmoke;
+	border-radius: 50px;
+    /* height: auto; */
+    /* font-weight: bold; */
+	/* padding: 1rem; */
+    /* justify-content: space-around; */
+    /* align-items: center ;
+    margin: 0.75rem; */
+    
+    /*Flexbox*/
+    /* display: flex; */
+	/* flex-wrap: wrap; */
+    /* gap: 1rem 0.5rem; */
+    /* align-content: flex-start; */
+    /* width: 80%; */
+
+    /*Grid*/
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 0.5rem; */
+} */
+
+.caja-uno {
+    grid-area: caja-uno;
+    /* width:45%; */
+    background-color:rgb(249, 232, 232);
+    border-radius: 50px;
+    padding: 1rem;
+    gap: 10px;
+    /* display: flex; */
 	flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.caja {
-    /* border:rgb(211, 22, 22) solid; */
-    background-color:whitesmoke;
-	border-radius: 50px;
-    height: auto;
-	width: 40%;
-    font-weight: bold;
-	padding: 20px;
-    align-items: space-around;
-    margin: 10px;
-    flex:2 2 1;
-
+.caja-dos {
+    grid-area: caja-dos;
+    /* width:45%; */
+    background-color:rgb(243, 233, 216);
+    border-radius: 50px;
+    padding: 1rem;
+    /* display: flex; */
+	flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
 }
 
-.caja:nth-child(3){
+.caja-tres{
+    grid-area: caja-tres;
+    background-color:rgb(234, 219, 192);
+    /* width:45%; */
+    border-radius: 50px;
+    padding: 1rem;
+    /* display: flex; */
+	flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.caja-cuatro{
+    grid-area: caja-cuatro;
     background-color:rgb(244, 216, 216);
+    /* width:45%; */
+    border-radius: 50px;
+    padding: 1rem;
+    /* display: flex; */
+	flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.caja:nth-child(4){
-    background-color:rgb(244, 216, 216);
-}
-
-.caja:nth-child(5){
-    width: 90%;
+.caja-cinco{
+    grid-area: caja-cinco;
+    /* width: 90%; */
     color: whitesmoke;
     background-color: rgb(203, 179, 179);
+    /* display: flex; */
+    border-radius: 50px;
+    padding: 1rem;
+	flex-wrap: wrap;
+    justify-content: space-around;
     }
 
 .titulo {
 	font-size: 20px;
+    font-weight: bold;
 	padding: 20px 0;
     text-align: center;
     color: rgb(180, 52, 52);
@@ -409,23 +505,30 @@ footer{
 }
 
 .banner {
+    grid-area: banner;
 	/* border:rgb(211, 22, 22) solid; */
-    background-color: rgb(231, 191, 191);
+    background-color: rgb(232, 217, 217);
 	border-radius: 50px;
-    height: auto;
     text-align: center;
     align-items: center;
     justify-content: center;
-  	padding: 2%;
-	background-size: cover;
-	background-position: center center;
-	width: 10%;
+    /* background-size: cover; */
+	/* background-position: center center; */
+    font-size: 1.1rem;
+    /* height: auto; */
+    
+    /*Flexbox*/
+    /* display: flex;   
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+  	padding: 2%; */
+    /* width: 20%; */
 }
 
 .banner p {
-    color: whitesmoke;
+    color: rgb(211, 22, 22);
     font-family: sans-serif;
-    font-weight: bold;
     font-size:relative; 
     flex-wrap: wrap;
            
@@ -458,13 +561,189 @@ footer{
 	cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {
-	
+/* LAYOUT CELULAR          */
+/**************************/
+
+.contenedor > * {
+    /* box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75); */
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
 }
 
-@media screen and (max-width: 700px) {}
-	
 
-@media screen and (max-width: 600px) {
+.contenedor {
+    /* background-color: rgb(229, 207, 198); */
+    background-color:  beige;
+    color: rgb(124, 117, 117);
+	font-family: 'Roboto', sans-serif;  
+    width: 90%;
+	/* margin: auto; */
+    
+    /*Flexbox*/
+    /* display: flex; */
+    /* gap: 1.25rem; */
 
+    /*Grid*/
+    display: grid;
+    gap: 10px;     /*aqui el ancho de la columna se ajusta automat. asiq solo definimos size rows*/
+    grid-template-areas: 
+    "caja-uno"      
+    "caja-dos"      
+    "caja-tres"     
+    "caja-cuatro"   
+    "caja-cinco"    ;
+    /* "banner"        auto; */
+
+    padding: 10px;
+    /* max-width: 1200px; */
+}
+
+/* LAYOUT TABLET         */
+/*************************/
+
+@media all and (max-width: 600px) {
+    .box-top {
+        width: 80%;
+    }
+    .box-top > ul > li{
+        width: 80%;
+        text-align: center;
+    }
+    .box-top-pie {
+        width: 80%;
+        text-align: center;
+        margin-left: 30px;
+    }
+
+    .box-bottom {
+        width: 80%;
+    }
+    form > .info-personal {
+        display: grid;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav {
+        padding: 3%;
+        font-size: 10px;
+    }
+
+    /** resp. index */
+    /* .contenedor {
+        padding: auto;
+    } */
+    /* .contenedor-definiciones {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-wrap: nowrap;
+    } */
+
+    .contenedor {
+        /* background-color: rgb(229, 207, 198); */
+        /* background-color:  beige; */
+        color: rgb(124, 117, 117);
+        font-family: 'Roboto', sans-serif;  
+        /* width: 85%; */
+        /* margin: auto; */
+        
+        /*Flexbox*/
+        /* display: flex; */
+        /* gap: 1.25rem; */
+    
+        /*Grid*/
+        display: grid;
+        gap: 10px;     /*aqui el ancho de la columna se ajusta automat. asiq solo definimos size rows*/
+        grid-template-areas: 
+        "caja-uno"      "caja-dos"      150px
+        "caja-tres"     "caja-cuatro"   auto
+        "caja-cinco"    "caja-cinco"    auto
+        "banner"        "banner"        70px/
+        auto            auto;
+    
+        padding: 10px;
+        /* max-width: 1200px; */
+    }
+    
+
+    /* .caja-{
+        flex: auto;
+        flex: initial;
+        flex: none;
+    }
+    .uno,
+    .dos,
+    .tres,
+    .cuatro {
+        height: 15%;
+        width: 90%;
+    }
+    .texto {
+        margin-bottom: 40px;
+    } */
+}
+
+/* LAYOUT TABLET GR        */
+/***************************/
+
+@media all and (max-width: 700px) {
+    .box-top {
+        width: 80%;
+    }
+    .box-top > ul {
+        width: 80%;
+        padding-left: 60px;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav {
+        padding: 2%;
+        font-size: 15px;
+    }
+}
+
+/* LAYOUT DESKTOP          */
+/***************************/
+@media all and (max-width: 900px) {
+    .box-top {
+        width: 80%;
+        flex-wrap: wrap;
+
+    }
+    .box-top > ul {
+        width: 80%;
+        padding-left: 70px;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav {
+        padding: 1%;
+        font-size: 20px;
+    }
+    .contenedor {
+        /* background-color: rgb(229, 207, 198); */
+        /* background-color:  beige; */
+        color: rgb(124, 117, 117);
+        font-family: 'Roboto', sans-serif;  
+        display: grid;
+        gap: 10px;     /*aqui el ancho de la columna se ajusta automat. asiq solo definimos size rows*/
+        grid-template-areas: 
+        "caja-uno"      "caja-dos"      "banner"     250px
+        "caja-tres"     "caja-cuatro"   "banner"    auto
+        "caja-cinco"    "caja-cinco"    "banner"    auto/
+        100px            100px            10px;
+
+        padding: 10px;
+        /* max-width: 1200px; */
+    }
 }

@@ -189,7 +189,7 @@ justify-content: left;
 
     }
 
-    .caja {
+    .caja-{
         /* background-color: antiquewhite; */
         background-color: rgb(226, 209, 185);
         border-radius: 1.5rem;
@@ -256,7 +256,7 @@ justify-content: left;
 
     }
 
-    .caja {
+    .caja-{
         /* background-color: antiquewhite; */
         background-color: rgb(226, 209, 185);
         border-radius: 1.5rem;
